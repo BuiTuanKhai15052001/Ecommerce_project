@@ -18,13 +18,7 @@ app.use(compression())
 
 
 //init router
-app.get('/', (req, res, next) => {
-    const strCompress = 'GhostmanBTK';
-    return res.status(200).json({
-        message: "Hello my friend!!!",
-        metadata: strCompress.repeat(10) 
-    })
-})
+app.use('/', require('./routes'))
 
 //init db
 require('./bds/init.mongodb');
