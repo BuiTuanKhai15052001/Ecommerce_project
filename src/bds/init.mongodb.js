@@ -12,7 +12,6 @@ class Database {
         this.connect();
     }
     connect(type = 'mongodb') {
-
         if (1 === 1) {
             mongoose.set('debug', true)
             mongoose.set('debug', { color: true })
@@ -21,13 +20,11 @@ class Database {
             maxPoolSize: 50
         })
             .then(() => {
-                console.log(`Connect Mongodb Success PROOOOOO`, countConnect())
+                console.log(`Connect Mongodb Success PROOOOOO`, `::::::::: numConnect::`,countConnect())
             })
             .catch(err => {
                 console.log(`Err Connect, Fail`)
             })
-
-
     }
     static getInstance() {
         if (!Database.instance) {
@@ -37,4 +34,5 @@ class Database {
     }
 }
 const instanceMongodb = Database.getInstance();
+
 module.exports = instanceMongodb;
