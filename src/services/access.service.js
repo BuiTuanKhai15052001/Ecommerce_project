@@ -18,6 +18,8 @@ const RoleShop = {
 
 class AccessService {
 
+    //LOGOUT
+
     static logout = async (keyStore) => {
         const delKey = await keyTokenService.removeKeyById(keyStore._id)
         if (!delKey) throw new NotFoundError('Not found delKey')
